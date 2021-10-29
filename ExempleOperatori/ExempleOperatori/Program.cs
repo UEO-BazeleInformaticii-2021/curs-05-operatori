@@ -6,9 +6,8 @@ namespace ExempleOperatori
     {
         static void Main(string[] args)
         {
-            PrintOddOrEven(1);
-
-            PrintOddOrEven(2);
+            PrintMessageIfExists("message1", "alt message 1");
+            PrintMessageIfExists(null, "alt message 2");
         }
 
         static void PrintOddOrEven(int number)
@@ -45,6 +44,16 @@ namespace ExempleOperatori
             {
                 Console.WriteLine($"The text is: {obj}");
             }
+        }
+
+        static void PrintMessageIfExists(string message, string alternative)
+        {
+            string finalMessage = message ?? alternative;
+            Console.WriteLine(finalMessage);
+
+            // or
+            /// message ??= alternative;
+            /// Console.WriteLine(message);
         }
     }
 }
