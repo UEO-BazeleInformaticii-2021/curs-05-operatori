@@ -6,8 +6,20 @@ namespace ExempleOperatori
     {
         static void Main(string[] args)
         {
-            PrintMessageIfExists("message1", "alt message 1");
-            PrintMessageIfExists(null, "alt message 2");
+            Print("text abc");
+        }
+
+        static void Print(string text)
+        {
+            string parameterName = nameof(text);
+            if (text is null)
+            {
+                Console.WriteLine($"The parameter {parameterName} was null");
+            }
+            else
+            {
+                Console.WriteLine($"{parameterName}={text}");
+            }
         }
 
         static void PrintOddOrEven(int number)
